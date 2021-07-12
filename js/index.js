@@ -25,7 +25,11 @@ function renderizarPersonaje(personaje) {
 
         fetch(info.url)
             .then(data => data.json())
-            .then(renderizarPersonaje);
+            .then(renderizarPersonaje)
+            .then(() => {
+                document.querySelector('.tarjeta').onclick = "";
+            })
+
     }
 
     div.innerHTML += `
